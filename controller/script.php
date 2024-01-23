@@ -26,7 +26,7 @@ if (isset($_SESSION["time-message"])) {
   }
 }
 
-$baseURL = "http://$_SERVER[HTTP_HOST]/apps/sp-nbc/";
+$baseURL = "http://$_SERVER[HTTP_HOST]/apps/tugas/rsup_betun_naive_bayes/";
 
 if (!isset($_SESSION["data-user"])) {
 

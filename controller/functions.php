@@ -171,22 +171,26 @@ function bayes($nama, $id_jenis_kelamin, $id_usia, $alamat, $gejala)
 
   return $nilai_p_a_v_v_rsort;
 }
+
 function bubble_sort($arr, $key)
 {
   $size = count($arr) - 1;
 
-  for ($i = 0; $i < $size; $i++) {
+  if ($size == 1) {
+    $start_ij = 0;
+  } else {
+    $start_ij = 1;
+  }
+  for ($i = $start_ij; $i < $size; $i++) {
 
-    for ($j = 0; $j < $size - $i; $j++) {
+    for ($j = $start_ij; $j < $size - $i; $j++) {
 
       $k = $j + 1;
+      $j = $k + 1;
 
-      // Periksa apakah indeks yang diakses ada dalam array
-      if (isset($arr[$k][$key]) && isset($arr[$j][$key])) {
+      if ($arr[$k][$key] > $arr[$j][$key]) {
 
-        if ($arr[$k][$key] > $arr[$j][$key]) {
-          list($arr[$j], $arr[$k]) = array($arr[$k], $arr[$j]);
-        }
+        list($arr[$j], $arr[$k]) = array($arr[$k], $arr[$j]);
       }
     }
   }
